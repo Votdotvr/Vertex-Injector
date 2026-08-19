@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vertex Injector</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background:#0b1220;
+    color:#e0e6ff;
+    font-family:Consolas, monospace;
+    margin:0;
+    padding:0;
+  }
+  header {
+    background:#182a43;
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #234266;
+  }
+  h1 {
+    margin:0;
+    font-size:32px;
+    letter-spacing:2px;
+  }
+  .container {
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+  }
+  .section {
+    background:#111827;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:25px;
+    border:1px solid #1f2937;
+  }
+  .btn {
+    display:inline-block;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:16px;
+    margin-top:10px;
+    cursor:pointer;
+  }
+  .btn:hover {
+    background:#1e4fcc;
+  }
+  footer {
+    text-align:center;
+    padding:20px;
+    color:#aebbd0;
+    font-size:12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Vertex Injector</h1>
+  <p>The official page for the Vertex Web Injector</p>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Download</h2>
+    <p>Click below to copy the Vertex Injector bookmarklet.</p>
+    <a class="btn" id="copyInjector">Copy Injector</a>
+  </div>
+
+  <div class="section">
+    <h2>How to Use</h2>
+    <p>1. Copy the injector using the button above.</p>
+    <p>2. Create a new bookmark.</p>
+    <p>3. Paste the injector code into the bookmark URL field.</p>
+    <p>4. Click the bookmark on any website to open the Vertex UI.</p>
+  </div>
+
+  <div class="section">
+    <h2>Disclaimer</h2>
+    <p>
+      The Vertex Injector is a client-side customization tool intended for harmless,
+      personal use. It does not bypass security, modify servers, or affect other users.
+      You are responsible for how you use this tool.
+    </p>
+    <p>
+      Do not use this injector to harm websites, violate terms of service, steal data,
+      or perform any illegal actions. The creator is not responsible for misuse.
+    </p>
+    <p>
+      By using this tool, you agree to use it responsibly.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Updates</h2>
+    <p>Version 1.0 — Initial release</p>
+  </div>
+
+</div>
+
+<footer>
+  Vertex Injector © 2026 — Created by Anna
+</footer>
+
+<!-- SAFE STORAGE (NOT RENDERED) -->
+<script id="injectorCode" type="text/plain">
+javascript:(function(){var d=document;if(d.getElementById("vertexInjectUI"))return;var ui=d.createElement("div");ui.id="vertexInjectUI";ui.style.cssText="position:fixed;top:60px;left:60px;width:460px;height:520px;background:#0b1220;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,0.75);border:1px solid rgba(75,156,255,0.45);color:#e0e6ff;z-index:999999999;padding:0;font-family:Consolas,monospace;overflow:hidden";ui.innerHTML='<div id="vxHeader" style="cursor:move;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#101b2d;border-bottom:1px solid rgba(75,156,255,0.6);"><div><span style="font-size:16px;font-weight:bold;">Vertex Code Injector</span><br><span style="font-size:11px;color:#aebbd0;">Inject HTML • JS • CSS • Python • C++</span></div><button id="vxClose" style="background:none;border:none;color:#aebbd0;font-size:18px;cursor:pointer;">✕</button></div><div style="padding:12px 14px;"><select id="vxLang" style="width:100%;padding:8px;background:#182a43;color:#fff;border:none;border-radius:8px;font-size:13px;margin-bottom:10px;"><option>HTML</option><option>CSS</option><option>JavaScript</option><option>Python</option><option>C++</option><option>JSON</option><option>Lua</option></select><textarea id="vxInput" style="width:100%;height:260px;background:#111827;border-radius:10px;border:1px solid #1f2937;color:#e5e7eb;padding:10px;font-size:13px;resize:none;"></textarea><div style="display:flex;gap:8px;margin-top:10px;"><button id="vxInject" style="flex:1;padding:9px;background:#2563eb;border:none;border-radius:9px;color:#fff;font-size:13px;font-weight:bold;cursor:pointer;">Inject</button><button id="vxClear" style="width:90px;padding:9px;background:#1f2937;border:none;border-radius:9px;color:#e5e7eb;font-size:12px;cursor:pointer;">Clear</button></div><div style="margin-top:10px;padding:8px 10px;border-radius:9px;background:#020617;border:1px solid #1e293b;"><div id="vxStatus" style="font-size:11px;color:#aebbd0;">Ready.</div></div></div>';d.body.appendChild(ui);var header=d.getElementById("vxHeader"),closeBtn=d.getElementById("vxClose"),injectBtn=d.getElementById("vxInject"),clearBtn=d.getElementById("vxClear"),input=d.getElementById("vxInput"),status=d.getElementById("vxStatus"),lang=d.getElementById("vxLang");closeBtn.onclick=function(){ui.remove()};clearBtn.onclick=function(){input.value="";status.innerHTML="Cleared."};injectBtn.onclick=function(){var code=input.value.trim();if(!code){alert("No code.");status.innerHTML="Error: empty.";return;}var wrap=d.createElement("div");wrap.style.cssText="position:relative;z-index:999999998;margin:6px;";switch(lang.value){case"HTML":wrap.innerHTML=code;break;case"CSS":var s=d.createElement("style");s.innerHTML=code;wrap.appendChild(s);break;case"JavaScript":var j=d.createElement("script");j.innerHTML=code;wrap.appendChild(j);break;default:wrap.innerHTML="<pre style=\'background:#111;padding:10px;border-radius:8px;color:#0f0;\'>"+code.replace(/</g,"&lt;")+"</pre>";}d.body.appendChild(wrap);status.innerHTML="Injected "+lang.value+".";};header.onmousedown=function(e){var ox=e.clientX-ui.offsetLeft,oy=e.clientY-ui.offsetTop;function mv(ev){ui.style.left=(ev.clientX-ox)+"px";ui.style.top=(ev.clientY-oy)+"px"}function up(){d.removeEventListener("mousemove",mv);d.removeEventListener("mouseup",up)}d.addEventListener("mousemove",mv);d.addEventListener("mouseup",up)};})();
+</script>
+
+<script>
+document.getElementById("copyInjector").onclick = function () {
+  const code = document.getElementById("injectorCode").textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    alert("Injector copied to clipboard!");
+  }).catch(err => {
+    alert("Failed to copy injector.");
+    console.error(err);
+  });
+};
+</script>
+
+</body>
+</html>
